@@ -44,7 +44,7 @@
             android:layout_gravity="bottom"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/myinfo_edit"
+                android:id="@+id/myinfo_name"
                 android:layout_marginTop="10dp"
                 android:text="NICK NAME"
                 android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                 android:layout_marginLeft="110dp"
                 android:layout_marginRight="110dp"
                 android:layout_marginTop="4dp"
-                android:layout_below="@id/myinfo_edit"
+                android:layout_below="@id/myinfo_name"
                 android:orientation="horizontal"/>
 
             <ImageView
@@ -74,6 +74,7 @@
                 android:layout_alignBottom="@id/myinfo_linear"
                 android:layout_marginBottom="4dp"/>
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,13 +102,13 @@
                     android:src="@drawable/ic_goal"/>
 
                 <TextView
+                    android:id="@+id/myinfo_goal_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="목표설정"
                     android:textSize="20sp"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/textView" />
+                    android:layout_marginLeft="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -125,6 +126,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_appsetting"/>
                 <TextView
+                    android:id="@+id/myinfo_appsetting"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="어플리케이션 설정"
@@ -148,6 +150,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_logout"/>
                 <TextView
+                    android:id="@+id/myinfo_logout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="로그아웃"

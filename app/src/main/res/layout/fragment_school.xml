@@ -6,11 +6,12 @@
         android:layout_height="match_parent"
         tools:context="com.example.dudco.highjinro.Fragment.SchoolFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="School"/>
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.gms.maps.MapView>
 
     </LinearLayout>
 </layout>
