@@ -6,14 +6,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.dudco.highjinro.MainActivity"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/background_main"
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/main_tool"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimary">
+            android:background="@drawable/background_toolbar">
 
         </android.support.v7.widget.Toolbar>
         <android.support.design.widget.TabLayout

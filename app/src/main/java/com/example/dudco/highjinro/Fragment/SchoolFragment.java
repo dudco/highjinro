@@ -1,6 +1,7 @@
 package com.example.dudco.highjinro.Fragment;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +13,12 @@ import com.example.dudco.highjinro.databinding.FragmentSchoolBinding;
 
 public class SchoolFragment extends Fragment {
     private FragmentSchoolBinding binding;
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         binding = FragmentSchoolBinding.bind(getView());
+
     }
 
     @Override
