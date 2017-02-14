@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,11 +35,7 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         setSupportActionBar(binding.mainTool);
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
         final ActionBar.LayoutParams params = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
@@ -51,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 View view = inflater.inflate(R.layout.toolbar_search_layout, null);
                 final EditText edit = (EditText) view.findViewById(R.id.search_edit);
-                edit.setOnClickListener(new View.OnClickListener() {
+                ImageView close = (ImageView) view.findViewById(R.id.search_close);
+                close.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         getSupportActionBar().setCustomView(toolbarView, params);
@@ -144,5 +143,22 @@ public class MainActivity extends AppCompatActivity {
         });
         binding.mainPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
         binding.mainPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.mainTab));
+        binding.mainPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, position + positionOffset);
+                binding.mainTabMargin.setLayoutParams(params);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 }
