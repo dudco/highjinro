@@ -1,6 +1,7 @@
 package com.example.dudco.highjinro;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.dudco.highjinro.databinding.ActivityMainBinding;
 import com.example.dudco.highjinro.databinding.ItemTabBinding;
@@ -16,6 +18,9 @@ import com.example.dudco.highjinro.databinding.ItemTabBinding;
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private ItemTabBinding tabTalkBinding,tabShcoolBinding,tabMyInfoBinding;
+
+    private static final String FONT_B = "fonts/08SeoulNamsanM.ttf";
+    private static final String FONT = "fonts/08SeoulNamsanL.ttf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         //toolbar custom
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View toolbarView = inflater.inflate(R.layout.toolbar_layout, null);
+        TextView title = (TextView) toolbarView.findViewById(R.id.toolbar_title);
+        title.setTypeface(Typeface.createFromAsset(getAssets(), FONT_B));
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 //        toolbarView.setLayoutParams(params);
 
@@ -33,24 +40,24 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
         View tab_talk = inflater.inflate(R.layout.item_tab, null);
-        tabTalkBinding = ItemTabBinding.bind(tab_talk);
+        tabTalkBinding = ItemTabBinding.bind(tab_talk); //binding
         tabTalkBinding.tabText.setText("HIGH TALK");
+        tabTalkBinding.tabText.setTypeface(Typeface.createFromAsset(getAssets(), FONT)); //setfont
         tabTalkBinding.tabText.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
         tabTalkBinding.tabIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_talk_click));
 
         View tab_school = inflater.inflate(R.layout.item_tab, null);
-        tabShcoolBinding = ItemTabBinding.bind(tab_school);
+        tabShcoolBinding = ItemTabBinding.bind(tab_school); //binding
+        tabShcoolBinding.tabText.setTypeface(Typeface.createFromAsset(getAssets(), FONT)); //setfont
         tabShcoolBinding.tabText.setText("학교 찾기");
         tabShcoolBinding.tabIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_school_nonclick));
 
         View tab_myInfo = inflater.inflate(R.layout.item_tab, null);
-        tabMyInfoBinding = ItemTabBinding.bind(tab_myInfo);
+        tabMyInfoBinding = ItemTabBinding.bind(tab_myInfo); //binding
+        tabMyInfoBinding.tabText.setTypeface(Typeface.createFromAsset(getAssets(), FONT));//setfont
         tabMyInfoBinding.tabText.setText("내 정보");
         tabMyInfoBinding.tabIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_human_nonclick));
-
-//        View tab_layout = inflater.inflate(R.layout.item_tab, null);
 
         binding.mainTab.addTab(binding.mainTab.newTab().setCustomView(tab_talk));
         binding.mainTab.addTab(binding.mainTab.newTab().setCustomView(tab_school));
