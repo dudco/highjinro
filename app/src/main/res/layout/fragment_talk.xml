@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.dudco.highjinro.Fragment.TalkFragment">
+        android:layout_height="match_parent">
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.dudco.highjinro.Fragment.TalkFragment"
+            android:background="@color/md_grey_300">
+            <ListView
+                android:id="@+id/talk_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stackFromBottom="true"
+                android:divider="@null">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="Talk"/>
+            </ListView>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/talk_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus"
+                app:layout_anchor="@id/talk_list"
+                app:layout_anchorGravity="bottom|end|right"
+                android:layout_margin="16dp"/>
+        </android.support.design.widget.CoordinatorLayout>
     </LinearLayout>
 </layout>

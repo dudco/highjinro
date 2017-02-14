@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:background="@color/md_grey_300">
+            android:background="@color/md_grey_300"
+            android:paddingBottom="5dp">
 
             <android.support.v4.widget.Space
                 android:id="@+id/main_tab_margin"
