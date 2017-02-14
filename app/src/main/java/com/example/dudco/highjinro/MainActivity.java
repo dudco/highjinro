@@ -115,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
                 tabShcoolBinding.tabText.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.black));
                 tabMyInfoBinding.tabText.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.black));
 
+                binding.mainTabIndicator.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.md_grey_300));
+
                 switch (tab.getPosition()){
                     case 0:
                         tabTalkBinding.tabIcon.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_talk_click));
@@ -127,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         tabMyInfoBinding.tabIcon.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_human_click));
                         tabMyInfoBinding.tabText.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimary));
+                        binding.mainTabIndicator.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.md_grey_400));
                         break;
                 }
             }
