@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_toolbar"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/search_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="선린인터넷고등학교"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center|left"
+                android:paddingLeft="9dp"
+                android:textStyle="bold"
+                android:background="@drawable/background_edit_serach"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:minLines="1"
+                android:inputType="text"/>
+            <ImageView
+                android:id="@+id/search_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_close"
+                android:background="@drawable/background_edit_x"
+                android:padding="7dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

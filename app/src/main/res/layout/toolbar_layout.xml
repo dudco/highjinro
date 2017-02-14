@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/ic_search"
-        android:layout_marginLeft="15dp"
-        android:visibility="invisible"/>
+    android:background="@drawable/background_toolbar">
     <TextView
         android:id="@+id/toolbar_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="선린 인터넷 고등학교"
-        android:textSize="24sp"
+        android:textSize="23sp"
         android:textColor="@color/white"
         android:gravity="center"
         android:textStyle="bold"/>
     <ImageView
+        android:id="@+id/toolbar_search"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:src="@drawable/ic_search"
-        android:layout_marginRight="15dp"/>
-</LinearLayout>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"/>
+</RelativeLayout>

@@ -7,10 +7,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dudco.highjinro.databinding.ActivityMainBinding;
 import com.example.dudco.highjinro.databinding.ItemTabBinding;
@@ -27,18 +32,51 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        //toolbar custom
-        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View toolbarView = inflater.inflate(R.layout.toolbar_layout, null);
-        TextView title = (TextView) toolbarView.findViewById(R.id.toolbar_title);
-        title.setTypeface(Typeface.createFromAsset(getAssets(), FONT_B));
-        ActionBar.LayoutParams params = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//        toolbarView.setLayoutParams(params);
-
         setSupportActionBar(binding.mainTool);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        final ActionBar.LayoutParams params = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        //toolbar custom
+        final LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        final View toolbarView = inflater.inflate(R.layout.toolbar_layout, null);
+        TextView title = (TextView) toolbarView.findViewById(R.id.toolbar_title);
+        ImageView search = (ImageView) toolbarView.findViewById(R.id.toolbar_search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view = inflater.inflate(R.layout.toolbar_search_layout, null);
+                final EditText edit = (EditText) view.findViewById(R.id.search_edit);
+                edit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getSupportActionBar().setCustomView(toolbarView, params);
+                    }
+                });
+                edit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        if(actionId == EditorInfo.IME_ACTION_SEARCH){
+                            String searchText = edit.getText().toString();
+                            Toast.makeText(MainActivity.this, searchText, Toast.LENGTH_SHORT).show();
+                        }
+                        return false;
+                    }
+                });
+                getSupportActionBar().setCustomView(view, params);
+            }
+        });
+        title.setTypeface(Typeface.createFromAsset(getAssets(), FONT_B));
+
         getSupportActionBar().setCustomView(toolbarView, params);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         View tab_talk = inflater.inflate(R.layout.item_tab, null);
         tabTalkBinding = ItemTabBinding.bind(tab_talk); //binding
