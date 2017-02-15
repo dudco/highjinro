@@ -54,4 +54,5 @@ public class TalkFragment extends Fragment {
         items.add(data);
         talkListAdapter.notifyDataSetChanged();
     }
+
 }

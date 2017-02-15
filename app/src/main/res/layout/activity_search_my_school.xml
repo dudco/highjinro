@@ -105,6 +105,7 @@
                 android:background="@drawable/backgroud_btn"
                 android:layout_marginRight="30dp">
                 <TextView
+                    android:id="@+id/btn_yes_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -119,6 +120,7 @@
                 android:layout_height="30dp"
                 android:background="@drawable/backgroud_btn">
                 <TextView
+                    android:id="@+id/btn_no_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

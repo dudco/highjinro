@@ -66,6 +66,7 @@
                         android:id="@+id/item_card_author_profile"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
                         android:src="@drawable/default_profile"/>
                     <TextView
                         android:id="@+id/item_card_author"

@@ -27,6 +27,8 @@ public class SearchMySchool extends AppCompatActivity {
                 if(isYes){
                     binding.btnNo.setBackground(ContextCompat.getDrawable(SearchMySchool.this, R.drawable.backgroud_box));
                     binding.btnYes.setBackground(ContextCompat.getDrawable(SearchMySchool.this, R.drawable.backgroud_btn));
+                    binding.btnNoText.setTextColor(ContextCompat.getColor(SearchMySchool.this, R.color.colorPrimary));
+                    binding.btnYesText.setTextColor(ContextCompat.getColor(SearchMySchool.this, R.color.white));
                     isYes = false;
                 }
             }
@@ -37,6 +39,8 @@ public class SearchMySchool extends AppCompatActivity {
                 if(!isYes){
                     binding.btnYes.setBackground(ContextCompat.getDrawable(SearchMySchool.this, R.drawable.backgroud_box));
                     binding.btnNo.setBackground(ContextCompat.getDrawable(SearchMySchool.this, R.drawable.backgroud_btn));
+                    binding.btnYesText.setTextColor(ContextCompat.getColor(SearchMySchool.this, R.color.colorPrimary));
+                    binding.btnNoText.setTextColor(ContextCompat.getColor(SearchMySchool.this, R.color.white));
                     isYes = true;
                 }
             }
