@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_search_my_school"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.dudco.highjinro.SearchMySchool"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="맞춤 학교 찾기"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="40dp"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_marginRight="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp">
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/search_text_so"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="자신의 관심분야를 설정하세요!"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="35dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="관심 분야"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:layout_marginRight="20dp"/>
+            <Spinner
+                android:id="@+id/spiner_one"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@id/search_text"
+                android:background="@drawable/background_spinner"
+                android:layout_marginBottom="10dp"
+                android:entries="@array/array_list1">
+
+            </Spinner>
+
+            <Spinner
+                android:id="@+id/spiner_two"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/spiner_one"
+                android:layout_toRightOf="@id/search_text"
+                android:background="@drawable/background_spinner"
+                android:entries="@array/array_list2">
+
+            </Spinner>
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/spiner_two"
+                android:layout_toRightOf="@id/search_text"
+                android:text="중복 태그 선택 불가!"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/white"
+                >
+
+            </TextView>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="40dp">
+            <TextView
+                android:id="@+id/text_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="공학 여부"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginRight="30dp"/>
+            <LinearLayout
+                android:id="@+id/btn_yes"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:background="@drawable/backgroud_btn"
+                android:layout_marginRight="30dp">
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="예"
+                android:textColor="@color/white"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_no"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:background="@drawable/backgroud_btn">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="아니오"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/backgroud_btn"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="100dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="예"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

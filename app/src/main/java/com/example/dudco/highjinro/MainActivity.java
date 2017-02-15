@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         setSupportActionBar(binding.mainTool);
-
+        String mySchool = getIntent().getStringExtra("title");
 
         final ActionBar.LayoutParams params = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         final LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         final View toolbarView = inflater.inflate(R.layout.toolbar_layout, null);
         TextView title = (TextView) toolbarView.findViewById(R.id.toolbar_title);
+        title.setText(mySchool);
         ImageView search = (ImageView) toolbarView.findViewById(R.id.toolbar_search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override

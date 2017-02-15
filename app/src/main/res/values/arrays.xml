@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_list1">
+        <item>"1순위"</item>
+        <item>"보건"</item>
+        <item>"복지"</item>
+        <item>"사무"</item>
+        <item>"토목"</item>
+        <item>"항공"</item>
+        <item>"금속가공"</item>
+        <item>"전기"</item>
+        <item>"제어계측"</item>
+        <item>"서비스"</item>
+        <item>"요리"</item>
+        <item>"음악"</item>
+        <item>"의료장비"</item>
+        <item>"환경"</item>
+        <item>"체육"</item>
+        <item>"디자인"</item>
+        <item>"생활디자인"</item>
+        <item>"뷰티아트"</item>
+        <item>"영상"</item>
+        <item>"만화"</item>
+        <item>"게임 일러스트"</item>
+        <item>"의상"</item>
+        <item>"컴퓨터디자인"</item>
+        <item>"관광"</item>
+        <item>"외국어"</item>
+        <item>"시스템 연구"</item>
+        <item>"신소재"</item>
+        <item>"재료"</item>
+        <item>"응용연구"</item>
+        <item>"화학"</item>
+        <item>"하드웨어"</item>
+        <item>"정보보안"</item>
+        <item>"로봇"</item>
+        <item>"네트워크"</item>
+        <item>"유비쿼터스"</item>
+        <item>"게임개발"</item>
+
+
+    </string-array>
+
+    <string-array name="array_list2">
+        <item>"2순위"</item>
+        <item>"보건"</item>
+        <item>"복지"</item>
+        <item>"사무"</item>
+        <item>"토목"</item>
+        <item>"항공"</item>
+        <item>"금속가공"</item>
+        <item>"전기"</item>
+        <item>"제어계측"</item>
+        <item>"서비스"</item>
+        <item>"요리"</item>
+        <item>"음악"</item>
+        <item>"의료장비"</item>
+        <item>"환경"</item>
+        <item>"체육"</item>
+        <item>"디자인"</item>
+        <item>"생활디자인"</item>
+        <item>"뷰티아트"</item>
+        <item>"영상"</item>
+        <item>"만화"</item>
+        <item>"게임 일러스트"</item>
+        <item>"의상"</item>
+        <item>"컴퓨터디자인"</item>
+        <item>"관광"</item>
+        <item>"외국어"</item>
+        <item>"시스템 연구"</item>
+        <item>"신소재"</item>
+        <item>"재료"</item>
+        <item>"응용연구"</item>
+        <item>"화학"</item>
+        <item>"하드웨어"</item>
+        <item>"정보보안"</item>
+        <item>"로봇"</item>
+        <item>"네트워크"</item>
+        <item>"유비쿼터스"</item>
+        <item>"게임개발"</item>
+
+    </string-array>
+</resources>

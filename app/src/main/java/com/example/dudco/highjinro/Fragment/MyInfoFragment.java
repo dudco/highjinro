@@ -2,9 +2,11 @@ package com.example.dudco.highjinro.Fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -27,16 +29,18 @@ public class MyInfoFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         binding = FragmentMyInfoBinding.bind(getView());
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String name = sharedPreferences.getString("nickname", "NICK NAME");
         BitmapDrawable drawable1 = (BitmapDrawable) ContextCompat.getDrawable(getContext(), R.drawable.default_profile);
         binding.myinfoProfile.setImageBitmap(new RoundedAvatarDrawable(drawable1.getBitmap()).getBitmap());
         BitmapDrawable drawable2 = (BitmapDrawable) ContextCompat.getDrawable(getContext(), R.drawable.camera);
         binding.myinfoCamera.setImageBitmap(new RoundedAvatarDrawable(drawable2.getBitmap()).getBitmap());
 
         binding.myinfoName.setTypeface(Typeface.createFromAsset(getContext().getAssets(), FONT_M));
+        binding.myinfoName.setText(name);
         binding.myinfoGoalText.setTypeface(Typeface.createFromAsset(getContext().getAssets(), FONT_M));
         binding.myinfoAppsetting.setTypeface(Typeface.createFromAsset(getContext().getAssets(), FONT_M));
         binding.myinfoLogout.setTypeface(Typeface.createFromAsset(getContext().getAssets(), FONT_M));
-
         binding.myinfoGoalText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

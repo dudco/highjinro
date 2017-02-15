@@ -35,6 +35,13 @@ public class TalkFragment extends Fragment {
         binding.talkList.setAdapter(talkListAdapter);
 
         final DashBoardData data = new DashBoardData("선린인터넷고 멀티미디어과", "가나다라마바사..","NICK NAME", "4", "2");
+        DashBoardData data1 = new DashBoardData("선린인터넷고 어디과가 좋나요?", "제목 그대로 어디과가 가장 좋나요?? 아직 진로를 정하지 못하였습니다.", "이찬우", "10", "3");
+        DashBoardData data2 = new DashBoardData("특성화고 인식", "저희 부모님은 특성화고에대해 안좋은 시각을 가지고 있으셔요 ㅠㅠ\n" + "다른분들도 그런가요??.", "박태준", "14", "24");
+        DashBoardData data3 = new DashBoardData("소프트웨어 개발 입문자입니다.", "개발공부를 할려고 하는데 시작언어로 C언어가 좋을까요 자바가 좋을까요???", "김도원", "20", "23");
+
+        addItems(data1);
+        addItems(data2);
+        addItems(data3);
         binding.talkFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
